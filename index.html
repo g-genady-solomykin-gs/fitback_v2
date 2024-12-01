@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Trade</title>
+    <link rel="stylesheet" href="libs/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="trade" id="init__trade">
+        <div class="container">
+            <div class="trade-wrapper">
+                <div class="trade-wrapper__header">
+                    <div class="trade-wrapper__header-logo">
+                        <a href="/"><img src="img/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="trade-wrapper__header-buttons">
+                        <a href="#" data-count="6" class="trade-wrapper__header-button">Watchlist</a>
+                        <a href="#" data-count="3" class="trade-wrapper__header-button">+3 KOL Calls</a>
+                        <a href="#" data-count="5" class="trade-wrapper__header-button">New Projects</a>
+                    </div>
+                    <div class="trade-wrapper__header-user">
+                        <div class="trade-wrapper__header-icon">
+                            <img src="img/icon/user.svg" alt="user">
+                        </div>
+                        <div class="trade-wrapper__header-name">
+                            <span>Andrew M.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="switch-and-search">
+                <div class="switch-and-search-wrapper">
+                    <div class="switch-and-search-wrapper__select">
+                        <div class="switch-and-search-wrapper__select-toggle"><span>15m</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>30m</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span class="active">1h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>2h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>5h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>7h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>10h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>21h</span></div>
+                        <div class="switch-and-search-wrapper__select-toggle"><span>24h</span></div>
+                    </div>
+                    <form class="switch-and-search-wrapper__search" action="#" method="GET">
+                        <div class="switch-and-search-wrapper__search-control">
+                            <input type="text" placeholder="Search by Twitter Handle">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+            <div class="table">
+              <div class="table__header">
+                <div class="table__left-column table__header-item" style="z-index: 15; padding-left: 75px;">Project</div>
+                <div class="table__header-item">Age</div>
+                <div class="table__header-item">New KOLs</div>
+                <div class="table__header-item">24h</div>
+                <div class="table__header-item">Watchlist</div>
+                <div class="table__header-item">KOL Breakdown</div>
+                <div class="table__header-item">Hashtags</div>
+                <div class="table__header-item">Notes</div>
+              </div>
+          
+              <div class="table__row">
+                <div class="table__left-column table__row-item">
+                    <div class="table__row-item-box">
+                        <i class="table__row-item-star"></i>
+                        <a href="#" class="table__row-item-preview">
+                            <img src="img/aftor.png" alt="aftor">
+                        </a>
+                        <a href="#" class="table__row-item-name">NATHAN</a>
+                        <!-- Иконка, по которой будет открываться попап -->
+                        <i class="table__row-item-missile" onclick="openPopup(this, event)"></i>
+                        <div class="popup" style="display: none;">
+                            <h6 class="title">Some text bla bla blah if it needed</h6>
+                            <div class="controll-popup">
+                            <input type="text" class="inputField" oninput="toggleButton(this)" placeholder="Enter your link here">
+                            <button class="submitButton" disabled>Save</button>
+                            </div>
+                        </div>
+
+                        <a href="#"><img src="img/icon/eye.svg" alt="eye"></a>
+                    </div>
+                </div>
+                <div class="table__row-item thisk">6d</div>
+                <div class="table__row-item green">+3</div>
+                <div class="table__row-item">+7</div>
+                <div class="table__row-item">4</div>
+                <div class="table__row-item">
+                    <div class="table__row-item-box">
+                        <div class="table__row-item-total">
+                            <div class="table__row-item-value yelow">14</div>
+                            <span class="table__row-item-title">Total</span>
+                        </div>
+                        <div class="table__row-item-total">
+                            <div class="table__row-item-value">10</div>
+                            <span class="table__row-item-title">Degen</span>
+                        </div>
+                        <div class="table__row-item-total">
+                            <div class="table__row-item-value">3</div>
+                            <span class="table__row-item-title">VC</span>
+                        </div>
+                        <div class="table__row-item-total">
+                            <div class="table__row-item-value">1</div>
+                            <span class="table__row-item-title">Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table__row-item hashtags">
+                    <button 
+                        class="table__row-item-btn"
+                        style="border-color:#86F89B; color: #86F89B;"
+                    >Buying &bull; <span>48</span>
+                    </button>
+                    <button 
+                        class="table__row-item-btn" 
+                        style="border-color:#847BFF; color: #847BFF;"
+                    >NFT
+                    </button>
+                    <button 
+                        class="table__row-item-btn"
+                        style="border-color:#FFAF84; color: #FFAF84;"
+                    >Founder</button>
+                    <button 
+                        class="table__row-item-btn"
+                        style="border-color:#F08080; color: #F08080;"
+                    >Art</button>
+                    <button 
+                        class="table__row-item-btn"
+                        style="border-color:#FFD700; color: #FFD700;"
+                    >Gold</button>
+                </div>
+                                               
+                <div class="table__row-item">
+                    <input class="table__row-item-comment" type="text" placeholder="Write here...">
+                </div>
+              </div>
+
+              
+   
+            </div>
+
+    </div>
+
+
+    <style>
+        .popup {
+            position: absolute;
+            bottom: 80px;
+            min-width: 465px;
+            left: 75px;
+            padding: 20px 18px 16px 18px;
+            background-color: #303646;
+            border-radius: 8px;
+            z-index: 1000;
+            }
+
+            .popup::after {
+                content: ''; 
+                position: absolute;
+                left: 150px;
+                top: 100%;
+                border: 12px solid transparent;
+                border-top: 14px solid #303646;
+            }
+
+            .popup .title {
+                font-size: 14px;
+                color: #fff;
+                margin-bottom: 20px;
+                font-weight: 700;
+            }
+
+            .controll-popup {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .controll-popup > input[type="text"] {
+                width: 100%;
+                background-color: #252A39;
+                padding: 15px 75px 15px 15px;
+                color: #fff;
+            }
+
+            .popup-content {
+            display: flex;
+            }
+
+            .controll-popup button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                color: #fff;
+                border-radius: 6px;
+                padding: 0 23px;
+                font-size: 14px;
+                font-weight: 400;
+                background-color: #30CA4C;
+                border: 2px solid #252A39;
+            }
+
+            button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+            }
+
+    </style>
+
+      .hashtags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 5px 8px;
+    outline: none;
+    border: 1px solid;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 35px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn.active {
+    background-color: currentColor;
+    color: white;
+}
+
+.btn.isActive.disable {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+    </style>
+     -->
+    <script src="js/class/table_init.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  scroll-behavior: smooth 
+
+h1, h2, h3, h4, h5, h6 
+    margin: 0
+    padding: 0
+    font-weight: 700
+
+p 
+ display: inline-block
+ margin: 0
+ padding: 0
+
+ span
+    display: inline-block
+
+a 
+    display: inline-block
+    color: #fff
+    text-decoration: none
+
+img 
+  max-width: 100%
+  height: auto
+  vertical-align: bottom
+  display: block
+
+ul, ol 
+    list-style: none
+    margin: 0
+    padding-left: 0
+
+button 
+  cursor: pointer
+  border: none
+  background: none
+  font: inherit
+
+input, button, textarea, select 
+  outline: none
+  border: none
+
+.container 
+  max-width: 100%
+  margin: 0 auto
+  padding: 0 50px
+
+@font-face
+  font-family: 'Klein'
+  src: url('../fonts/Klein/Klein-Light.woff2') format('woff2')
+  font-weight: normal 
+  font-style: normal
+
+$color-white: #fff
+    
+body
+  
+    font-size: 14px
+    min-width: 320px
+    background: #1A1E2B
+    font-family: 'Klein', sans-serif
+
+
+
+.owerflow
+    overflow-x: hidden
+
+.trade
+    position: relative
+    background: #1A1E2B
+    width: 100%
+    height: 100vh
+    &::before
+        content: ''
+        background-image: url(../img/bg-grid.png)
+        background-repeat: repeat
+        background-position: center
+        background-size: unset
+        pointer-events: none
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        opacity: .4
+        z-index: 1
+    &-wrapper
+        position: relative
+        z-index: 100
+        &__header
+            display: flex
+            align-items: center
+            padding-top: 40px
+            &-logo
+                display: inline-block
+                margin-right: 75px
+            &-buttons
+                display: flex
+                column-gap: 8px
+                font-weight: 700
+            &-button
+                padding: 15px 32px
+                background-color: #303646
+                border-radius: 35px
+                transition: background-color .3s
+                &:hover
+                    background-color: #3e424d
+                &:nth-last-child(-n+3)
+                    position: relative
+                    padding-right: 30px
+                    &::after
+                        content: attr(data-count)
+                        display: inline-block
+                        width: 20px
+                        height: 20px
+                        line-height: 20px
+                        margin-left: 10px
+                        text-align: center
+                        border-radius: 50%
+                        font-size: 14px
+                        background: #F8444F
+            &-user
+                display: flex
+                align-items: center
+                margin-left: auto
+                cursor: pointer
+            &-icon
+                max-width: 26px
+                margin-right: 10px
+            &-name
+                color: #fff
+                font-weight: 700
+                font-size: 16px
+    .switch-and-search
+        margin-top: 40px
+        &-wrapper
+            position: relative
+            z-index: 100
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &__select
+                display: flex
+                align-items: center
+                background-color: #303646
+                border-radius: 35px
+                padding: 8px 10px
+                &-toggle
+                    span
+                        font-weight: 600
+                        color: #5c6068
+                        padding: 4px 17px
+                        border-radius: 35px
+                        cursor: pointer
+                        &:hover
+                            color: #fff
+                            background-color: #212531
+                        &.active
+                            color: #fff
+                            background-color: #212531
+                            pointer-events: none
+                            cursor: default
+            &__search
+                position: relative
+                max-width: 425px
+                width: 100%
+                &::after
+                    content: url('../img/icon/seach.svg')
+                    position: absolute
+                    left: 17px
+                    top: 50%
+                    transform: translateY(-40%)
+                &-control
+                    input
+                        color: #7B85A3
+                        font-size: 14px
+                        font-weight: 600
+                        width: 100%
+                        height: 100%
+                        background-color: #303646
+                        padding: 15px 15px 15px 55px
+                        border-radius: 35px
+    .table
+      display: grid
+      grid-template-columns: 320px 100px 110px 100px 100px 240px 340px 1fr
+      width: 100%
+      border-collapse: collapse
+      position: relative
+      overflow: auto
+      z-index: 100
+      &__header
+        font-size: 14px
+        color: #fff
+        position: sticky
+        top: 0
+        display: contents
+        z-index: 10
+        &-item
+          position: sticky
+          top: 0
+          z-index: 15
+          font-weight: 400
+          text-align: left
+          padding: 50px 10px 30px 10px
+        //   background-color: #1A1E2B
+      &__left-column
+          position: sticky
+          left: 0
+          z-index: 15
+          &:first-child
+            padding-left: 50px
+      &__row
+          display: contents
+          color: #fff
+          &:nth-child(odd) .table__row-item 
+            background-color:#252a39
+          &:nth-child(even) .table__row-item 
+            background-color:#2a303f
+          &-item
+            display: flex
+            align-items: center
+            padding: 20px 10px
+            font-weight: 700
+            &-comment
+                max-width: 420px
+                width: 100%
+                padding: 8px 2px
+                border-radius: 35px
+                background: transparent
+                font-weight: 400
+                color: #fff
+            &.thisk
+                color: #6F7997
+            &.green
+                color: #86F89B
+            &.hashtags
+                display: flex
+                gap: 10px
+                flex-wrap: wrap
+            &-btn
+                padding: 5px 8px
+                outline: none
+                border: 1px solid
+                text-transform: uppercase
+                font-size: 12px
+                font-weight: 700
+                border-radius: 35px
+                transition: 0.3s
+                cursor: pointer
+                background-color: transparent
+                &.active
+                    background-color: currentColor
+                    color: white
+                &.isActive.disable
+                    cursor: not-allowed
+                    opacity: 0.5
+            &-box
+              display: flex
+              align-items: center
+            &-star
+                background-image: url('../img/icon/star-gray.svg')
+                background-size: contain
+                width: 18px
+                height: 18px
+                transition: .3s
+                cursor: pointer
+                &:hover
+                    background-image: url('../img/icon/star-active.svg')
+                &.active-star
+                    background-image: url('../img/icon/star-active.svg')
+            &-icon
+            &-preview
+                margin: 0 20px 0 15px
+            &-name
+                display: inline-block
+                font-size: 14px
+                font-weight: 700
+            &-missile
+                position: relative
+                background-image: url('../img/icon/missile-gray.svg')
+                background-size: contain
+                width: 16px
+                height: 16px
+                margin: 0 10px
+                cursor: pointer
+                &.active-missile
+                    background-image: url('../img/icon/missile-active.svg')
+            &-total
+                column-gap: 20px
+                display: inline-grid
+                row-gap: 13px
+            &-value
+                &.yelow
+                    color: #FFD059
+            &-title
+                display: inline-block
+                margin-right: 20px
+                color: #6F7997
+                font-weight: 400
