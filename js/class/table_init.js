@@ -107,6 +107,11 @@ function openPopup(element, event) {
   const popup = element.nextElementSibling;
 
   if (element.classList.contains('active-missile') && event.button === 0) {
+    // Если ссылка активна, позволяем перейти по ней.
+    const link = element.getAttribute('data-link');
+    if (link && link !== '#') {
+      window.open(link, '_blank');
+    }
     return;
   }
 
@@ -136,9 +141,17 @@ document.addEventListener('click', function (event) {
     const popup = event.target.closest('.popup');
     if (popup) {
       const missileElement = popup.previousElementSibling;
+      const inputField = popup.querySelector('.inputField');
+
       if (missileElement && missileElement.classList.contains('table__row-item-missile')) {
-        missileElement.classList.add('active-missile');
+        const link = inputField.value.trim();
+        if (link) {
+          // Устанавливаем ссылку и делаем элемент активным
+          missileElement.setAttribute('data-link', link);
+          missileElement.classList.add('active-missile');
+        }
       }
+
       popup.style.display = 'none';
     }
   }
